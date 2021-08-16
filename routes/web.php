@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AutomaticAttendanceController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [AutomaticAttendanceController::class, 'index'])->name('index');
+Route::post('/register', [AutomaticAttendanceController::class, 'register'])->name('register');
